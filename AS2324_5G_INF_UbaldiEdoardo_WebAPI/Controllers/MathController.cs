@@ -16,7 +16,7 @@ namespace AS2324_5G_INF_UbaldiEdoardo_WebAPI.Controllers
             return new JsonResult(
                 new
                 {
-                    status_result,
+                    status_result = "OK",
                     res = (num % factor) == 0,
                 });
         }
@@ -44,8 +44,19 @@ namespace AS2324_5G_INF_UbaldiEdoardo_WebAPI.Controllers
             return new JsonResult(
                 new
                 {
-                    status_result,
+                    status_result = "OK",
                     res = (anno % 4) == 0,
+                });
+        }
+
+        [HttpGet("ipotenusa")]
+        public JsonResult ipotenusa(double cateto1, double cateto2)
+        {
+            return new JsonResult(
+                new
+                {
+                    status_result = "OK",
+                    res = Math.Sqrt(Math.Pow(cateto1,2) + Math.Pow(cateto2, 2)),
                 });
         }
     }
