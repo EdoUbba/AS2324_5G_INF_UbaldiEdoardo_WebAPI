@@ -38,6 +38,15 @@ namespace AS2324_5G_INF_UbaldiEdoardo_WebAPI.Controllers
                 });
         }
 
-        
+        [HttpGet("bisestile")]
+        public JsonResult bisestile(int anno)
+        {
+            return new JsonResult(
+                new
+                {
+                    status_result,
+                    res = (anno % 4) == 0,
+                });
+        }
     }
 }
